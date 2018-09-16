@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>音乐播放器</title>
+		<style>
+			div{width: 320px;height:240px;border: 1px solid #333;}
+			div li{list-style: none;margin-top: 6px;font-size:14px;margin-left: 6px;}
+			div li span{float: right;margin-right: 6px;color:blue;cursor: pointer;text-decoration: underline;}
+			audio{width:320px;margin-top: 5px;}
+		</style>
+		<script>
+		window.onload = function(){
+			var play = document.getElementsByClassName("btn"),
+				audios = document.getElementById("audios");
+			for(var i = 0;i<play.length;i++){
+				(function(j){
+					play[j].onclick = function(){
+						audios.setAttribute("src","audio/" + (j+1) + ".mp3");
+						if(this.innerHTML == "播放"){
+							audios.play();
+							this.innerHTML = "暂停";
+							for(var k = 0;k<play.length;k++){
+								if(k!=j){
+									play[k].innerHTML = "播放";
+								}
+							}
+						}else{
+							audios.pause();
+							this.innerHTML = "播放";
+						}
+					}	
+				}(i));
+			}
+		}	
+		</script>
+	</head>
+	<body>
+		<div>
+			<li>情非得已<span class="btn">播放</span></li>
+			<li>如果没有你<span class="btn">播放</span></li>
+		</div>
+		<audio controls="controls" id="audios" src="audio/1.mp3"></audio>
+	</body>
+</html>
