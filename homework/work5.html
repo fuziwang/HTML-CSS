@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>七巧板</title>
+	</head>
+	<body>
+		<canvas id="canvas" width="400" height="400"></canvas>
+		<script type="text/javascript">
+			var canvas = document.querySelector("#canvas"),
+				context = canvas.getContext("2d");
+			
+			const path = {
+				obj1:{moveto:[0,0],lineto:[[200,200],[400,0]],color:'rgb(202,255,103)'},
+				obj2:{moveto:[400,0],lineto:[[400,200],[300,300],[300,100]],color:'rgb(239,61,97)'},
+				obj3:{moveto:[300,100],lineto:[[200,200],[300,300]],color:'rgb(249,245,26)'},
+				obj4:{moveto:[200,200],lineto:[[300,300],[200,400],[100,300]],color:'rgb(165,148,192)'},
+				obj5:{moveto:[100,300],lineto:[[200,400],[0,400]],color:'rgb(252,142,204)'},
+				obj6:{moveto:[0,400],lineto:[[0,0],[200,200]],color:'rgb(103,190,207)'},
+				obj7:{moveto:[400,200],lineto:[[200,400],[400,400]],color:'rgb(246,202,41)'}
+			}
+			
+			for(var i in path){
+				context.beginPath();
+				context.moveTo(path[i].moveto[0],path[i].moveto[1]);
+				for(var j = 0;j<path[i].lineto.length;j++){
+					context.lineTo(path[i].lineto[j][0],path[i].lineto[j][1]);
+				}
+				context.fillStyle = path[i].color;
+				context.fill();
+				context.closePath();
+			}
+		</script>
+	</body>
+</html>
