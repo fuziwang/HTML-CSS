@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>time</title>
+		<style>
+			#canvas{
+				border:1px solid #FF0000;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="400" height="400"></canvas>
+		<script>
+			var canvas = document.querySelector('#canvas'),
+				context = canvas.getContext('2d');
+			
+			function clear() {
+			    context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+			}
+			
+			function draw() {
+			    clear();
+			    // 获取现在对应的时间
+			    var date = new Date(),
+			    	hours = date.getHours(),
+			    	minutes = date.getMinutes(),
+			    	seconds = date.getSeconds();
+			    hours = hours > 12 ? hours - 12 : hours;
+			    var hour = hours + minutes / 60;
+			    	minute = minutes + seconds / 60;
+			    	
+			    context.save();
+			    context.translate(200, 200);
+			    context.beginPath();
+			    
+			    //circle
+				context.beginPath();
+				context.arc(0,0,150,0,2*Math.PI);
+				context.lineWidth = 5;
+				context.strokeStyle = 'lawngreen';
+				context.stroke();
+				
+				// zhizhen
+				context.fillStyle = 'red';
+				context.fillRect(0, -138, 3, 15);
+				context.save();
+				for(var i = 1;i<60;i++){
+					context.beginPath();
+					context.rotate(Math.PI/30);
+					if(i%5  == 0){
+						context.fillStyle = 'red';
+						context.fillRect(0,-138,3,15);
+					}else{
+						context.fillStyle = 'black';
+						context.fillRect(0,-138,3,8);
+					}
+					context.closePath();
+				}
+				context.restore();
+				
+			    // number
+			    context.font = '14px Arial';
+			    context.fillStyle = '#000';
+			    context.textAlign = 'center';
+			    context.textBaseline = 'middle';
+			    for (var n = 1; n <= 12; n++) {
+			        var theta = (n - 3) * (Math.PI * 2) / 12;
+			        var x = 110 * Math.cos(theta);
+			        var y = 110 * Math.sin(theta);
+			        context.fillText(n, x, y);
+			    }
+			
+			    // hour
+			    context.save();
+			    var theta = (hour - 3) * 2 * Math.PI / 12;
+			    context.rotate(theta);
+			    context.beginPath();
+			    context.lineWidth = 4.5;
+			    context.moveTo(-15, 0);
+			    context.lineTo(85, 0);
+			    context.strokeStyle = 'purple';
+			    context.stroke();
+			    context.restore();
+			    
+			    // minute
+			    context.save();
+			    var theta = (minute - 15) * 2 * Math.PI / 60;
+			    context.rotate(theta);
+			    context.beginPath();
+			    context.lineWidth = 4.5;
+			    context.moveTo(-15,0);
+			    context.lineTo(90, 0);
+			    context.strokeStyle = 'rgb(255,192,203)';
+			    context.stroke();
+			    context.restore();
+			
+			    // second
+			    context.save();
+			    var theta = (seconds - 15) * 2 * Math.PI / 60;
+			    context.rotate(theta);
+			    context.beginPath();
+			    context.lineWidth = 4;
+			    context.arc(0,0,3,0,2*Math.PI);
+			    context.arc(80,0,3,0,2*Math.PI)
+			    context.moveTo(-15, 0);
+			    context.lineTo(100, 0);
+			    context.strokeStyle = 'red';
+			    context.fillStyle = 'black';
+			    context.stroke();
+			    context.fill();
+			    context.restore();
+			
+			    context.restore();
+			}
+			setInterval(draw,1000);
+		</script>
+	</body>
+</html>
