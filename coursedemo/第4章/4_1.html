@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="img/snowflake.png" />
+</head>
+
+<body>
+    <div id="tip"></div>
+    <div id="lon"></div>
+    <div id="lat"></div>
+    <div id="accuracy"></div>
+    <script>
+        function getE(id) {
+            return document.getElementById(id);
+        }
+
+        function showPosition(data) {
+            getE("lon").innerHTML = ("经度：" + data.coords.longitude);
+            getE("lat").innerHTML = ("纬度：" + data.coords.latitude);
+            getE("accuracy").innerHTML = ("精确度：" + data.coords.accuracy + "米");
+        }
+
+        window.onload = function() {
+            if (navigator.geolocation) 
+            {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } 
+            else 
+            {
+                getE("tip").innerHTML = "您的浏览器版本过旧，建议使用最新版本谷歌浏览器。";
+            }
+        }
+    </script>
+</body>
+
+</html>

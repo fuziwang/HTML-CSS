@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>数据通信</title>
+	<meta charset="utf-8"/>
+	<link rel="icon" href="img/snowflake.png" />
+	<script type="text/javascript">
+		var ws = new WebSocket("wss://echo.websocket.org");
+
+		//指定连接成功后的回调函数
+		ws.onopen = function(evt) { 
+		  	console.log("Connection open ..."); 
+		  	ws.send("Hello WebSockets!");
+		};
+
+		//指定收到服务器数据后的回调函数。
+		ws.onmessage = function(evt) {
+		  	console.log( "Received Message: " + evt.data);
+		  	//ws.send('lalala');  
+		  	ws.close();	
+		};
+
+		//指定连接关闭后的回调函数
+		ws.onclose = function(evt) {
+		  	console.log("Connection closed.");
+		}; 
+	</script>
+</head>
+<body>
+
+</body>
+</html>

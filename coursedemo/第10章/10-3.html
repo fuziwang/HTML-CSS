@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Canvas</title>
+    <style>
+        canvas {
+            border: 1px solid red;
+            background: #eee;
+        }
+    </style>
+</head>
+<body>
+	<canvas id="canvas" width="500" height="500"></canvas>
+	<script>
+	    //创建绘图容器
+	    var canvas = document.getElementById("canvas");
+	    var context = canvas.getContext("2d");
+		
+		context.moveTo(0,0);
+		context.lineTo(100,100);
+		context.lineTo(200,0);
+		context.lineTo(300,100);
+		context.lineTo(400,0);
+		context.lineWidth = 5;
+		context.strokeStyle = "#0088BB";
+		
+		context.stroke();
+	</script>
+</body>
+</html>

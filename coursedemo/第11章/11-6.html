@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        canvas{
+           border:1px solid red;
+        }
+    </style>
+</head>
+<body>
+	<canvas id="canvas" width="1024" height="500">
+	
+	</canvas>
+<script>
+    window.onload = function () {
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+
+        context.fillStyle = "pink";
+        context.fillRect(0,0,200,200);
+
+        context.fillStyle = "yellow";
+        context.translate(100,100);//坐标原点移动至原来的（100，100）
+        context.fillRect(0,0,200,200);
+
+        context.fillStyle = "orange";
+        context.translate(100,100);//在上次原点移动的基础上又移动了（100，100）
+        context.fillRect(0,0,200,200);
+
+    }
+</script>
+</body>
+</html>
+

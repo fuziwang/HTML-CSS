@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>file</title>
+		<script>
+			window.onload = function(){
+				var file = document.getElementById('file'),
+					btn = document.getElementsByTagName('button')[0],
+					div = document.getElementsByTagName('div');
+				btn.onclick = function(){
+					for(var i = 0;i<file.files.length;i++){
+						div[0].innerHTML = '文件字节长度： ' + file.files[i].size;
+						div[1].innerHTML = '文件类型： ' + file.files[i].type;
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		选择文件：
+		<input type="file" id="file" multiple/>
+		<button>显示文件信息</button>
+		<div></div>
+		<div></div>
+	</body>
+</html>

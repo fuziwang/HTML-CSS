@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        canvas {
+            border: 1px solid yellowgreen;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="1024" height="500">
+
+</canvas>
+<script>
+    window.onload = function () {
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+
+        var image = new Image();
+        image.src = 'images/snowflake.png';
+
+        image.onload = function(){
+            var img = context.createPattern(image, 'repeat-x');
+            context.fillStyle = img;
+            context.strokeStyle = "greenyellow";
+            context.lineWidth = 2;
+
+            context.fillRect(0, 0, 1024, 200);
+//          context.strokeRect(0, 0, 1024, 200);
+        };
+    }
+</Script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>WebSocket</title>
+<meta charset="utf-8"/>
+<style>
+html,body{font:normal 0.9em arial,helvetica;}
+#log {width:440px; height:200px; border:1px solid #7F9DB9; overflow:auto;}
+#msg {width:330px;}
+</style>
+<script>
+var socket;
+function checkWebSocket(){
+	return (window.WebSocket==undefined)?false:true;
+}
+window.onload = function (){
+	if(!checkWebSocket()){
+		log("您的浏览器不支持")
+		return false;
+	}
+	var host = "ws://127.0.0.1:9999";
+	socket = new WebSocket(host);
+	log('WebSocket - status '+socket.readyState);
+    socket.onopen = function(){
+		log("Welcome - status "+this.readyState);
+	};
+    socket.onmessage = function(msg){
+		log("Received: "+msg.data);
+	};
+    socket.onclose = function(){
+		log("Disconnected - status "+this.readyState); 
+	};
+	$("msg").focus();
+	$("msg").onkeypress = onkey;
+}
+
+function send(){
+	var txt,msg;
+	txt = $("msg");
+	msg = txt.value;
+	if(!msg){
+		alert("消息不能为空啊亲!"); 
+		return false; 
+	}
+	txt.value="";
+	txt.focus();
+	socket.send(msg);
+	log('Sent: '+msg); 
+}
+function quit(){
+	log("Goodbye!");
+	socket.close();
+	socket=null;
+}
+
+function $(id){ return document.getElementById(id); }
+function log(msg){ $("log").innerHTML+="<br>"+msg; }
+function onkey(event){ if(event.keyCode==13){ send(); } }
+</script>
+</head>
+<body>
+	<h3>Talk To Robot</h3>
+	<br><br>
+	<div id="log"></div>
+	<input id="msg" type="textbox"/>
+	<button onclick="send()">发送</button>
+	<button onclick="quit()">断开</button>
+	<div>尝试发送: hello, hi, name, age, thanks, bye</div>
+</body>
+</html>

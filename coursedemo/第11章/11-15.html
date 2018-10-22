@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        canvas {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="1024" height="550">
+
+</canvas>
+<script>
+    window.onload = function (){
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+
+        context.shadowColor="rgba(100,100,255,1)";// 背景颜色
+        context.shadowBlur=20; // 阴影模糊的级别
+        context.shadowOffsetX=20; // 阴影与形状的偏移量
+        context.shadowOffsetY=20; // 阴影与形状的偏移量
+		// 添加文字
+        context.font = "bold 100px 宋体";
+        context.fillStyle = "Blue";
+        context.fillText("欢迎大家学习canvas", 30,300);
+    }
+</script>
+</body>
+</html>
+

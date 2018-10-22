@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>拖动</title>
+		<style>
+			div{height: 180px;width: 180px;border: 1px solid #333;padding:10px;}
+		</style>
+		<script>
+			window.onload = function(){
+				var img = document.getElementById('img');
+				img.ondragover = function(e){
+					e.preventDefault();
+				};
+				img.ondrop = function(e){
+					e.preventDefault();
+					var f = e.dataTransfer.files[0];
+					var fr = new FileReader();
+					fr.onload = function(){
+						img.innerHTML = "<img src=\""+fr.result+"\"/>";
+					}
+					fr.readAsDataURL(f);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h2>上传头像</h2>
+		<div id="img" draggable="true"></div>
+	</body>
+</html>

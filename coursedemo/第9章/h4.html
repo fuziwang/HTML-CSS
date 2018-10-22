@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>上传头像</title>
+		<link rel="icon" href="img/cloud-icon.png"/>
+		<style>
+			div{
+				width:180px;
+				height:180px;
+				border:1px solid black;
+				padding:20px;
+			}
+		</style>
+	</head>
+	<body>
+		<p>上传头像</p>
+		<div ondragover="allow(event)" ondrop="drop(event)" id="div" draggable="true"></div>
+	</body>
+	<script>
+		function allow(ev){
+			ev.preventDefault();
+		}
+		function drop(ev){
+			ev.preventDefault();
+			var div = document.getElementById('div');
+			var img = document.createElement('img');
+            var object = div.appendChild(img);
+			var head = ev.dataTransfer.files[0];
+			var reader=new FileReader();
+			reader.readAsDataURL(head);
+			reader.onload = function(){
+				img.src = reader.result;
+			}
+		}
+	</script>
+</html>
