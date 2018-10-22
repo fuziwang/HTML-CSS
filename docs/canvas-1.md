@@ -13,10 +13,16 @@
 <canvas id="canvas1" width="200" height="100">
 	您的浏览器不支持 canvas 元素，请更换或更新浏览器
 </canvas>
+<script>
+  	var canvas = document.getElementId('canvas');
+  	canvas.width = 200;
+	canvas.height = 100;
+</script>
 ```
 
 - canvas默认大小是300*150
 - 建议直接设置width和height属性，同时改变canvas元素的大小和元素绘图表面的大小。
+- 说明：可以通过JavaScript的方式来控制canvas的width和height属性
 
 > 如通过CSS来设定，则只会改变canvas的大小。当canvas元素的大小和绘图表面的大小不一致时，浏览器会对绘图表面进行缩放，使其符合元素的大小。如果只通过css来改变canvas的大小，里面的内容不会发生改变，里面的内容不会随着画布的大小进行缩放）
 
