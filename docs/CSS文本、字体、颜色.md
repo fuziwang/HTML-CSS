@@ -38,7 +38,8 @@ p{
 
 设置文本的颜色 `color：#eeeeee;`
 
-![](images/50.png)
+![color](https://upload-images.jianshu.io/upload_images/12817540-5e774e51fa222c15.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 行高：line-height
 
@@ -62,7 +63,8 @@ p{
 
 **练习一：修改文字阴影的位移距离、模糊半径、阴影颜色和霓虹灯效果**
 
-![](images/51.png)
+![文本阴影](https://upload-images.jianshu.io/upload_images/12817540-650f96ae68a6143d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 ```html
 <!DOCTYPE html>
@@ -99,7 +101,8 @@ p{
 
 借助阴影效果列表机制，可以使用阴影叠加出燃烧文字特效。
 
-![](images/52.png)
+![火焰字](https://upload-images.jianshu.io/upload_images/12817540-fde38b8180d231d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 ```html
 <!DOCTYPE html>
@@ -131,7 +134,8 @@ p{
 
 通过左上和右下各添加一个1像素错位的补色阴影，营造出淡淡的立体效果。包括立体和凹体。
 
-![](images/53.png)
+![立体文字和描边文字](https://upload-images.jianshu.io/upload_images/12817540-14c934b1bcc2bff7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 ```html
 <!DOCTYPE html>
@@ -183,7 +187,8 @@ p{
 | break-all | 允许在单词内换行       |
 | keep-all  | 只能在半角空格或连字符处换行 |
 
-![](images/54.png)
+![文本换行](https://upload-images.jianshu.io/upload_images/12817540-10049707f7688deb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 ```html
 <!DOCTYPE html>
@@ -242,7 +247,8 @@ p{
 
 @font - face规则和兼容性
 
-![](images/55.png)
+![@font-face](https://upload-images.jianshu.io/upload_images/12817540-13668cfa992218db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 **实现网页中插入特殊字体的过程**
 
@@ -280,11 +286,13 @@ hsl (hue, saturation, lightness)
 - 饱和度（ Saturation ）：表示色彩被使用了多少，或者说颜色的深浅程度、鲜艳程度。取值为0%-100%，其中0% 意味着灰度，即没有使用该颜色；100% 饱和度最高，即颜色最艳。
 - 亮度（ Lightness ）：取值为0%-100%， 其中0% 是最暗，显示为黑色，100% 最亮，显示为白色。
 
-![](images/56.png)
+![HSL](https://upload-images.jianshu.io/upload_images/12817540-2e316a8096ef5251.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 **练习：设计颜色表。选中一个色值，利用调整颜色的饱和度与亮度比重，设计配色方案。**
 
-![](images/57.png)
+![颜色表](https://upload-images.jianshu.io/upload_images/12817540-bb20e75db56b440b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 ```html
 <!DOCTYPE html>

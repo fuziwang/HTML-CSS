@@ -60,7 +60,8 @@ background-attachment属性设置背景图像是否固定或者随着页面的�
 | cover      | 保持背景图像本身宽高比例，将图片缩放到正好完全覆盖所定义背景的区域        |
 | contain    | 保持背景图像本身宽高比例，将图片缩放到宽度或高度正好适应所定义背景的区域     |
 
-![](images/58.png)
+![cover和contain](https://upload-images.jianshu.io/upload_images/12817540-684bde80286fdd93.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 ```html
 <!DOCTYPE html>
@@ -86,7 +87,8 @@ background-attachment属性设置背景图像是否固定或者随着页面的�
 
 默认是`padding-box`
 
-![](images/59.png)
+![background-origin](https://upload-images.jianshu.io/upload_images/12817540-78eaba1008348228.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 ```html
 <!DOCTYPE html>
@@ -158,7 +160,8 @@ background-attachment属性设置背景图像是否固定或者随着页面的�
 
 ##### 常用的边框样式
 
-![](images/60.png)
+![border](https://upload-images.jianshu.io/upload_images/12817540-084ea22b141f073f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 + 设置边框宽度：`border-width` 宽度值。示例： `border-width:1px;`
 
@@ -167,7 +170,8 @@ background-attachment属性设置背景图像是否固定或者随着页面的�
 + 设置边框样式：`border-style` 样式关键字。示例：`border-style: solid;`
 
 
-![](images/61.png)
+![边框线类型](https://upload-images.jianshu.io/upload_images/12817540-9ea583d6b2cddca4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 + 边框复合样式：`border: width / style / color` 示例：`border: 3px dotted#ff9900`
 
@@ -185,7 +189,8 @@ background-attachment属性设置背景图像是否固定或者随着页面的�
 | length | 定义圆角的形状。（圆角半径） |
 | %      | 比百分比定义圆角的形状    |
 
-![](images/62.png)
+![border-radius](https://upload-images.jianshu.io/upload_images/12817540-116d5951925b4b5c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 如果要绘制的圆角边框4个角的半径各不相同时，需按**左上角、右上角、右下角、左下角**的顺序设置每个方向圆角半径的值。
 
@@ -213,7 +218,8 @@ div{
 
 ABCD四个参数表示浏览器自动把图像分隔时的上边距、右边距、下边距以及左边距。
 
-![](images/63.png)
+![border-image](https://upload-images.jianshu.io/upload_images/12817540-b79156d404388fbe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 border-image 属性是一个简写属性，用于设置以下属性：
 
@@ -231,6 +237,7 @@ border-image 属性是一个简写属性，用于设置以下属性：
 
 语法：`box-shadow: h-shadow v-shadow blur spread color inset;`
 
-![](images/64.png)
+![border-shadow](https://upload-images.jianshu.io/upload_images/12817540-8603e51f547be641.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![](images/65.png)
+
+![border-shadow](https://upload-images.jianshu.io/upload_images/12817540-de0c25b90377e64b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
